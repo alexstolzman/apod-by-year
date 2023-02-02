@@ -8,11 +8,11 @@ import { CardActionArea } from '@mui/material';
 class ImageCard extends React.Component{
     render(){
         return(
-                 <Card sx={{ maxWidth: 345 }} style={{height: '100%'}}>
+                 <Card sx={{ maxWidth: 345 }} style={{height: '100%',  width: '18rem' }} border="secondary">
                     <CardActionArea>
                         <CardMedia 
                             component="img"
-                            height="140"
+                            height="200"
                             image={this.props.url}
                             alt={this.props.title}
                         />

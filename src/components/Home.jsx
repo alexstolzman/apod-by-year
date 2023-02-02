@@ -19,15 +19,25 @@ function Home(){
         .then(json=> {
             setData([...json])
         })
+        .catch(err=>{
+            alert("No data for "+year)
+        })
         
     }, [year])
 
     return(
-        <div>
-            <h1>Test</h1>
-    
+        <div style={{textAlign: "center"}}>
+            <h1>NASA Astronomy Photo of the Day by Year(Public Domain only)</h1>
+            <p>Displays all public domain photos off from NASA's APoD site by year. Contains data from 1996-2023(the 2023 data is not up to date) </p>
+            <p>Click the title of each card to go to the full picture/video</p>
+            <div style={{padding: '0px 700px 200px 700px'}}>
+            <label>
+                Pick Year
+            </label>
+                <YearPicker onChange={setYear}/>
+            </div>
             <div>
-            <Grid container spacing={1}>
+            <Grid container spacing={2}>
                 {data.map((image => 
                          <Grid key={image.date}>
                             <ImageCard key={image.date} title={image.title} url={image.url} explanation={image.explanation}/>
@@ -36,9 +46,6 @@ function Home(){
                     ))}
 
             </Grid>
-                  <div>
-                <YearPicker onChange={setYear}/>
-            </div>
             </div>
         
         </div>
