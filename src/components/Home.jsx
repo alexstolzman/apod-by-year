@@ -25,6 +25,7 @@ function Home(){
     return(
         <div>
             <h1>Test</h1>
+    
             <div>
             <Grid container spacing={1}>
                 {data.map((image => 
@@ -35,8 +36,11 @@ function Home(){
                     ))}
 
             </Grid>
+                  <div>
+                <YearPicker onChange={setYear}/>
             </div>
-            <YearPicker onChange={setYear}/>
+            </div>
+        
         </div>
         
     )

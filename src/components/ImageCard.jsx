@@ -8,7 +8,7 @@ import { CardActionArea } from '@mui/material';
 class ImageCard extends React.Component{
     render(){
         return(
-                 <Card sx={{ maxWidth: 345 }}>
+                 <Card sx={{ maxWidth: 345 }} style={{height: '100%'}}>
                     <CardActionArea>
                         <CardMedia 
                             component="img"
@@ -17,8 +17,8 @@ class ImageCard extends React.Component{
                             alt={this.props.title}
                         />
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                {this.props.title}
+                            <Typography gutterBottom variant="h5" component="div" >
+                                <a href={this.props.url} style={{"textDecoration": "none"}}>{this.props.title}</a>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
                                 {this.props.explanation}
